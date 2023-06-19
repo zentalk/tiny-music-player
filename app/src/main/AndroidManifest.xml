@@ -1,51 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:a="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
-  package="com.martinmimigames.tinymusicplayer"
-  a:versionCode="4"
-  a:versionName="1.3">
+  android:versionCode="4"
+  android:versionName="1.3">
 
-  <uses-permission a:name="android.permission.POST_NOTIFICATIONS" />
-  <uses-permission a:name="android.permission.FOREGROUND_SERVICE" />
+  <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
   <uses-permission
-    a:name="android.permission.READ_EXTERNAL_STORAGE"
+    android:name="android.permission.READ_EXTERNAL_STORAGE"
     tools:ignore="ScopedStorage" />
 
   <application
-    a:icon="@drawable/ic_launcher"
-    a:label="Tiny Music Player"
-    a:restoreAnyVersion="true"
+    android:icon="@drawable/ic_launcher"
+    android:label="Tiny Music Player"
+    android:restoreAnyVersion="true"
     tools:targetApi="froyo">
 
     <receiver
-      a:name=".HWListener"
-      a:exported="true">
+      android:name=".HWListener"
+      android:exported="true">
       <intent-filter>
-        <action a:name="android.intent.action.MEDIA_BUTTON" />
+        <action android:name="android.intent.action.MEDIA_BUTTON" />
       </intent-filter>
     </receiver>
 
     <service
-      a:name=".Service"
-      a:exported="false" />
+      android:name=".Service"
+      android:exported="false" />
 
     <activity
-      a:name=".Launcher"
-      a:excludeFromRecents="true"
-      a:exported="true">
+      android:name=".Launcher"
+      android:excludeFromRecents="true"
+      android:exported="true">
       <intent-filter>
-        <action a:name="android.intent.action.MAIN" />
-        <category a:name="android.intent.category.LAUNCHER" />
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
 
       <intent-filter tools:ignore="AppLinkUrlError">
-        <action a:name="android.intent.action.VIEW" />
-        <action a:name="android.intent.action.SEND" />
+        <action android:name="android.intent.action.VIEW" />
+        <action android:name="android.intent.action.SEND" />
 
-        <category a:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.DEFAULT" />
 
-        <data a:mimeType="audio/*" />
-        <data a:mimeType="video/*" />
+        <data android:mimeType="audio/*" />
+        <data android:mimeType="video/*" />
       </intent-filter>
     </activity>
   </application>
