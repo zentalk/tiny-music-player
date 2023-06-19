@@ -3,12 +3,21 @@ plugins {
 }
 
 android {
-  compileSdkVersion 33
+  compileSdk 33
 
   defaultConfig {
     minSdkVersion 1
     targetSdkVersion 33
   }
+
+//  java {
+//    toolchain {
+//      languageVersion = JavaLanguageVersion.of(11)
+//      vendor = JvmVendorSpec.IBM
+//      implementation = JvmImplementation.J9
+//    }
+//  }
+  java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
   /* just delete the signing configs if it doesn't work */
   signingConfigs {
@@ -38,7 +47,12 @@ android {
   }
 
   compileOptions {
-    sourceCompatibility JavaVersion.VERSION_16
-    targetCompatibility JavaVersion.VERSION_16
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
   }
+  namespace 'com.martinmimigames.tinymusicplayer'
+
+//  dependencies {
+//    implementation('androidx.core:core:1.10.1')
+//  }
 }
